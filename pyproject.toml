@@ -1,0 +1,32 @@
+[project]
+name = "mumble-to-bars"
+version = "0.1.0"
+description = "Transcribe non-verbal mumble into vowel templates and generate rhythm-matched Korean/English rap lyrics."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.11,<3.12"
+dependencies = []
+
+[project.scripts]
+m2b = "mumble_to_bars.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "ruff>=0.17.0",
+]
